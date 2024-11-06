@@ -1,0 +1,261 @@
+.title {
+  font-size: 48px;
+  line-height: 58.08px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.subTitle {
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 48px;
+  opacity: 0.3;
+  font-size: 16px;
+  text-align: left;
+}
+
+.table_wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  width: 1569px;
+  max-height: 832px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.table {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table_header {
+  background-color: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  line-height: 14.52px;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.id_column_title {
+  text-align: center;
+  width: 47px;
+  padding: 8.5px 19.5px;
+}
+
+.user_column_title {
+  padding-left: 12px;
+}
+
+.todoCount_column_title {
+  padding-right: 62px;
+  padding-left: 12px;
+  width: 168px;
+  padding: 8.5px 62px 8.5px 12px;
+}
+
+.table_header_text {
+  font-weight: 600;
+  text-align: start;
+}
+
+.table_row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  line-height: 19.36px;
+}
+
+.table_row:last-child,
+.table_row:first-child {
+  border-bottom: none;
+}
+
+.id_column {
+  text-align: center;
+}
+
+.todoCount_column {
+  width: 168px;
+  padding-left: 12px;
+  padding-right: 146px;
+}
+
+.user_column {
+  padding: 19.5px 8px;
+}
+
+.user_column_data {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user_avatar_wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user_avatar {
+  width: 20px;
+  height: 20px;
+}
+
+.user_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.user_email {
+  line-height: 14.52px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  text-transform: lowercase;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.user_email:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Адаптация для планшетных устройств */
+@media screen and (max-width: 834px) and (min-height: 1194px) {
+  .table_wrapper {
+    width: 675px;
+    max-height: 1012px;
+    overflow-y: auto;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .subTitle {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+
+  .table_header {
+    line-height: 10px;
+  }
+
+  .id_column_title,
+  .todoCount_column_title {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .user_column {
+    padding: 15px 8px;
+  }
+
+  .table_row {
+    line-height: 16px;
+  }
+
+  .table_header_text {
+    font-size: 10px;
+  }
+
+  .todoCount_column {
+    padding: 0;
+    text-align: center;
+  }
+
+  .user_email {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .user_avatar_wrapper {
+    width: 32px;
+    height: 32px;
+  }
+
+  .user_avatar {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 402px) and (min-height: 874px) {
+  .header {
+    text-align: left;
+  }
+
+  .table_wrapper {
+    width: 322px;
+    max-height: 592px;
+    overflow-y: auto;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .subTitle {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+
+  .table_header {
+    line-height: 8px;
+  }
+
+  .id_column_title,
+  .todoCount_column_title {
+    padding: 6px;
+    text-align: center;
+  }
+
+  .user_column {
+    padding: 12px 6px;
+  }
+
+  .table_row {
+    line-height: 14px;
+  }
+
+  .table_header_text {
+    font-size: 8px;
+  }
+
+  .todoCount_column {
+    padding: 0;
+    text-align: center;
+  }
+
+  .user_email {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  .user_avatar_wrapper {
+    width: 24px;
+    height: 24px;
+  }
+
+  .user_avatar {
+    width: 12px;
+    height: 12px;
+  }
+}

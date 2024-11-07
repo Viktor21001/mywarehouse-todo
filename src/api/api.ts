@@ -8,30 +8,20 @@ import {
 const checkResponse = <T>(res: Response): Promise<T> =>
   res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
 
-export const getUsers = () => {
-  return fetch('https://jsonplaceholder.typicode.com/users')
+export const getUsers = () =>
+  fetch('https://jsonplaceholder.typicode.com/users')
     .then((res) => checkResponse<IGetUser[]>(res))
-    .then((res) => {
-      const response: IReturnedUser[] = res.map((item) => {
-        return {
-          id: item.id,
-          name: item.username,
-          email: item.email,
-        };
-      });
-      return response;
-    })
+    .then((res) =>
+      res.map((item) => ({
+        id: item.id,
+        name: item.username,
+        email: item.email,
+      }))
+    )
     .catch((err) => console.error(err));
-};
 
-export const getTodos = () => {
-  return fetch('https://jsonplaceholder.typicode.com/todos')
+export const getTodos = () =>
+  fetch('https://jsonplaceholder.typicode.com/todos')
     .then((res) => checkResponse<IGetTodos[]>(res))
-    .then((res) => {
-      const response: IReturnedTodos[] = res.map((item) => {
-        return { userId: item.userId };
-      });
-      return response;
-    })
+    .then((res) => res.map((item) => ({ userId: item.userId })))
     .catch((err) => console.error(err));
-};

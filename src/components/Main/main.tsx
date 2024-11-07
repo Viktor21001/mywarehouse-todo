@@ -1,11 +1,15 @@
-import { IUser } from '../../types/types';
+import { useAppSelector } from '../../redux/hooks';
 import user_logo from '../../assets/User_logo.svg';
 
-type IMainProps = {
-  users: IUser[];
-};
+const Main = () => {
+  const users = useAppSelector((state) => {
+    const todos = state.todos.todos;
+    return state.users.users.map((user) => ({
+      ...user,
+      count: todos.filter((todo) => todo.userId === user.id).length,
+    }));
+  });
 
-const Main = ({ users }: IMainProps) => {
   return (
     <>
       <header>

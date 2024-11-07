@@ -18,16 +18,15 @@
 
 1. **Склонируйте репозиторий:**
 
-   git clone https://github.com/Viktor21001/mywarehouse-todo.git
-   cd my-storage
+        git clone https://github.com/Viktor21001/mywarehouse-todo.git
 
 2. **Установите зависимости**
 
-    npm install
+        npm install
 
 3. **Запустите приложение**
 
-    npm run dev
+        npm run dev
 Приложение будет запущено на http://localhost:5173.
 
 ## Использование

@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# My Storage - User To-Do Table
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект **My Storage** предоставляет интерфейс для отображения списка пользователей и их задач (to-do). Данные загружаются из `JSONPlaceholder API`, и с использованием Redux Toolkit осуществляется управление состоянием приложения.
 
-Currently, two official plugins are available:
+## Структура проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `src/api/api.ts` - содержит функции для работы с API, загрузки пользователей и задач.
+- `src/components` - компоненты пользовательского интерфейса:
+  - `App.tsx` - основной компонент приложения, выполняет инициализацию данных.
+  - `Main/main.tsx` - отображает таблицу пользователей и количество их задач.
+- `src/redux` - папка с файлами для конфигурации Redux:
+  - `slices` - Redux slices (`usersSlice` и `todosSlice`) для работы с состоянием пользователей и задач.
+  - `store.ts` - основной store приложения.
+  - `hooks.ts` - настраивает типизированные хуки `useAppDispatch` и `useAppSelector`.
+- `src/types/types.ts` - типы данных, используемые в приложении.
 
-## Expanding the ESLint configuration
+## Установка и запуск
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1.  **Склонируйте репозиторий:**
 
-- Configure the top-level `parserOptions` property like this:
+    git clone https://github.com/Viktor21001/mywarehouse-todo.git
+    cd my-storage
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2.  **Установите зависимости**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+    npm install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3.  **Запустите приложение**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+        npm run dev
+
+    Приложение будет запущено на http://localhost:5173.
+
+## Использование
+
+Приложение загружает данные пользователей и задач при первом рендере. На главной странице отображается таблица с пользователями, их аватарами, именами, электронной почтой и количеством задач (to-do count).
+
+## Стек технологий
+
+    - React - библиотека для построения пользовательского интерфейса.
+    - Redux Toolkit - библиотека для управления состоянием приложения.
+    - TypeScript - для строгой типизации.
+    - Vite - инструмент для сборки и разработки проекта.
+
+## Данные API
+
+Данные пользователей и задач загружаются из JSONPlaceholder - бесплатного онлайн-ресурса для тестирования и прототипирования. - URL пользователей: https://jsonplaceholder.typicode.com/users - URL задач: https://jsonplaceholder.typicode.com/todos

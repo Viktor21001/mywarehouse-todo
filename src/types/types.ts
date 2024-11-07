@@ -28,17 +28,3 @@ export type IGetUser = {
     bs: string;
   };
 };
-
-export type IReturnedUser = {
-  id: number;
-  name: string;
-  email: string;
-};
-
-export type IReturnedTodos = {
-  userId: number;
-};
-
-export type IUser = IReturnedUser & {
-  count: number;
-};

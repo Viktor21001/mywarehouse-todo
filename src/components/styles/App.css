@@ -3,7 +3,6 @@
   line-height: 58.08px;
   font-weight: 700;
   margin-bottom: 8px;
-  text-align: left;
 }
 
 .subTitle {
@@ -12,21 +11,17 @@
   margin-bottom: 48px;
   opacity: 0.3;
   font-size: 16px;
-  text-align: left;
 }
 
 .table_wrapper {
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 12px;
-  width: 1569px;
-  max-height: 832px;
-  overflow-y: auto;
-  position: relative;
 }
 
 .table {
   width: 100%;
   border: 0;
+  overflow: hidden;
   border-radius: 10px;
   border-collapse: collapse;
   table-layout: fixed;
@@ -34,14 +29,12 @@
 
 .table_header {
   background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
   font-size: 12px;
   line-height: 14.52px;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.3);
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 .id_column_title {
@@ -132,107 +125,47 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Адаптация для планшетных устройств */
-@media screen and (max-width: 834px) and (min-height: 1194px) {
-  .table_wrapper {
-    width: 675px;
-    max-height: 1012px;
-    overflow-y: auto;
+@media screen and (width < 596px) {
+  body {
+    font-size: 12px;
+  }
+
+  #root {
+    padding: 56px 40px;
   }
 
   .title {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 24px;
+    line-height: 29.04px;
   }
 
   .subTitle {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     margin-bottom: 24px;
   }
 
   .table_header {
-    line-height: 10px;
+    line-height: 9.68px;
   }
 
-  .id_column_title,
+  .id_column_title {
+    width: 37px;
+    padding: 11px 15.5px;
+  }
+
   .todoCount_column_title {
-    padding: 8px;
+    width: 86px;
+    padding: 0 9px;
     text-align: center;
   }
 
   .user_column {
-    padding: 15px 8px;
+    padding: 12.5px 8px;
   }
 
   .table_row {
-    line-height: 16px;
-  }
-
-  .table_header_text {
-    font-size: 10px;
-  }
-
-  .todoCount_column {
-    padding: 0;
-    text-align: center;
-  }
-
-  .user_email {
-    font-size: 10px;
-    line-height: 14px;
-  }
-
-  .user_avatar_wrapper {
-    width: 32px;
-    height: 32px;
-  }
-
-  .user_avatar {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-/* Адаптация для мобильных устройств */
-@media screen and (max-width: 402px) and (min-height: 874px) {
-  .header {
-    text-align: left;
-  }
-
-  .table_wrapper {
-    width: 322px;
-    max-height: 592px;
-    overflow-y: auto;
-  }
-
-  .title {
-    font-size: 24px;
-    line-height: 29px;
-  }
-
-  .subTitle {
-    font-size: 12px;
-    line-height: 18px;
-    margin-bottom: 16px;
-  }
-
-  .table_header {
-    line-height: 8px;
-  }
-
-  .id_column_title,
-  .todoCount_column_title {
-    padding: 6px;
-    text-align: center;
-  }
-
-  .user_column {
-    padding: 12px 6px;
-  }
-
-  .table_row {
-    line-height: 14px;
+    line-height: 14.52px;
   }
 
   .table_header_text {
@@ -246,12 +179,12 @@
 
   .user_email {
     font-size: 8px;
-    line-height: 12px;
+    line-height: 12.1px;
   }
 
   .user_avatar_wrapper {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   .user_avatar {
